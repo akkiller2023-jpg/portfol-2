@@ -1,0 +1,2588 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="description"
+    content="Aditya Chauhan is a Digital Marketing Executive specializing in SEO, Meta Ads, and AI strategy based in Gurugram.">
+  <meta name="keywords"
+    content="Aditya Chauhan, Digital Marketing Executive, SEO Specialist, Meta Ads, AI Strategy, Gurugram, Marketing Automation, Portfolio">
+  <meta property="og:title" content="Aditya Chauhan — Digital Marketing Executive">
+  <meta property="og:description" content="Digital Marketing Executive specializing in SEO, Meta Ads, and AI strategy.">
+  <meta property="og:type" content="website">
+  <title>Aditya Chauhan — Digital Marketing Executive</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+    rel="stylesheet">
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <style>
+    /* ─── TOKENS ─── */
+    :root {
+      --bg: #030308;
+      --bg2: #080812;
+      --s: #11111a;
+      --s2: #151520;
+      --b: rgba(255, 255, 255, .1);
+      --b2: rgba(255, 255, 255, .2);
+      --t: #ffffff;
+      --t2: #c3c3d5;
+      --mu: #8a8aa5;
+      --v: #8664ff;
+      --c: #22d3ee;
+      --gr: linear-gradient(135deg, #8664ff, #22d3ee);
+      --gv: rgba(134, 100, 255, .3);
+      --r: 16px;
+      --ease: cubic-bezier(.4, 0, .2, 1);
+    }
+
+    [data-theme=light] {
+      --bg: #ffffff;
+      --bg2: #f7f7fa;
+      --s: #ffffff;
+      --s2: #fdfdfd;
+      --b: rgba(0, 0, 0, .15);
+      --b2: rgba(124, 92, 252, .3);
+      --t: #000000;
+      --t2: #333344;
+      --mu: #555566;
+    }
+
+    /* ─── BASE ─── */
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--bg);
+      color: var(--t);
+      overflow-x: hidden;
+      cursor: none;
+      -webkit-font-smoothing: antialiased;
+      transition: background .3s, color .3s;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button {
+      cursor: none;
+      font-family: inherit;
+    }
+
+    ::selection {
+      background: rgba(124, 92, 252, .25);
+    }
+
+    /* ─── CURSOR ─── */
+    #c-dot {
+      position: fixed;
+      z-index: 9999;
+      pointer-events: none;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--v);
+      transform: translate(-50%, -50%);
+      transition: width .15s, height .15s, background .2s;
+    }
+
+    #c-ring {
+      position: fixed;
+      z-index: 9998;
+      pointer-events: none;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 1.5px solid var(--v);
+      transform: translate(-50%, -50%);
+      opacity: .5;
+      transition: width .28s var(--ease), height .28s var(--ease), border-color .2s, opacity .2s;
+    }
+
+    body.ch #c-ring {
+      width: 46px;
+      height: 46px;
+      border-color: var(--c);
+      opacity: .75;
+    }
+
+    body.ch #c-dot {
+      width: 4px;
+      height: 4px;
+      background: var(--c);
+    }
+
+    /* ─── GRID BG ─── */
+    .grid-bg {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image: linear-gradient(var(--b) 1px, transparent 1px), linear-gradient(90deg, var(--b) 1px, transparent 1px);
+      background-size: 50px 50px;
+      mask-image: radial-gradient(ellipse 80% 90% at 50% 50%, black 10%, transparent 100%);
+    }
+
+    /* ─── REVEAL ─── */
+    [data-rev] {
+      opacity: 0;
+      transition: opacity .6s var(--ease), transform .6s var(--ease);
+    }
+
+    [data-rev=up] {
+      transform: translateY(30px);
+    }
+
+    [data-rev=left] {
+      transform: translateX(-30px);
+    }
+
+    [data-rev=right] {
+      transform: translateX(30px);
+    }
+
+    [data-rev].vis {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: .85rem 5rem;
+      transition: background .3s, box-shadow .3s, padding .25s;
+    }
+
+    nav.sc {
+      background: rgba(7, 7, 15, .88);
+      backdrop-filter: blur(20px) saturate(160%);
+      box-shadow: 0 1px 0 var(--b);
+      padding: .7rem 5rem;
+    }
+
+    [data-theme=light] nav.sc {
+      background: rgba(245, 244, 255, .92);
+    }
+
+    .logo {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      font-size: 1.25rem;
+      letter-spacing: -.04em;
+      display: flex;
+      align-items: center;
+      gap: 3px;
+    }
+
+    .logo-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--gr);
+      margin-bottom: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.8rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .64rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--mu);
+      position: relative;
+      padding-bottom: 2px;
+      transition: color .2s;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--gr);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform .25s var(--ease);
+    }
+
+    .nav-links a:hover {
+      color: var(--t);
+    }
+
+    .nav-links a:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    .tgl {
+      width: 44px;
+      height: 24px;
+      border-radius: 12px;
+      background: var(--s2);
+      border: 1px solid var(--b2);
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: 2px;
+    }
+
+    .tgl-k {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--gr);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .68rem;
+      transition: transform .35s cubic-bezier(.68, -.55, .27, 1.55);
+    }
+
+    [data-theme=light] .tgl-k {
+      transform: translateX(20px);
+    }
+
+    /* ─── HERO ─── */
+    #hero {
+      min-height: calc(100vh - 58px);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 2.5rem;
+      padding: 3rem 5rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(100px);
+      pointer-events: none;
+    }
+
+    .b1 {
+      width: 500px;
+      height: 500px;
+      background: #7c5cfc;
+      opacity: .09;
+      top: -120px;
+      right: -60px;
+      animation: bf 12s ease-in-out infinite;
+    }
+
+    .b2 {
+      width: 350px;
+      height: 350px;
+      background: #22d3ee;
+      opacity: .07;
+      bottom: -60px;
+      left: 40%;
+      animation: bf 9s ease-in-out infinite reverse;
+    }
+
+    @keyframes bf {
+
+      0%,
+      100% {
+        transform: translate(0, 0);
+      }
+
+      50% {
+        transform: translate(20px, -15px);
+      }
+    }
+
+    .h-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .63rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--v);
+      margin-bottom: 1rem;
+      opacity: 0;
+      animation: fadeup .5s .1s both;
+    }
+
+    .h-eyebrow::before,
+    .h-eyebrow::after {
+      content: '';
+      width: 18px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    h1 {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      font-size: clamp(3rem, 5.5vw, 6.2rem);
+      line-height: .92;
+      letter-spacing: -.04em;
+      opacity: 0;
+      animation: fadeup .6s .2s both;
+    }
+
+    h1 span {
+      display: block;
+    }
+
+    h1 .gtext {
+      background: var(--gr);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .h-meta {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .65rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--t2);
+      margin-top: .9rem;
+      opacity: 0;
+      animation: fadeup .5s .32s both;
+    }
+
+    .live {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--c);
+      flex-shrink: 0;
+      animation: livep 2s infinite;
+    }
+
+    @keyframes livep {
+
+      0%,
+      100% {
+        box-shadow: 0 0 0 0 rgba(34, 211, 238, .55);
+      }
+
+      60% {
+        box-shadow: 0 0 0 7px rgba(34, 211, 238, 0);
+      }
+    }
+
+    .h-desc {
+      font-size: .96rem;
+      color: var(--t2);
+      line-height: 1.72;
+      max-width: 400px;
+      margin-top: .9rem;
+      font-weight: 400;
+      opacity: 0;
+      animation: fadeup .5s .44s both;
+    }
+
+    .h-btns {
+      display: flex;
+      gap: .7rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeup .5s .56s both;
+    }
+
+    .btn-p {
+      padding: .62rem 1.5rem;
+      border-radius: 50px;
+      background: var(--gr);
+      color: #fff;
+      font-weight: 700;
+      font-size: .86rem;
+      border: none;
+      position: relative;
+      overflow: hidden;
+      transition: transform .22s, box-shadow .22s;
+    }
+
+    .btn-p span {
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn-p::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #22d3ee, #7c5cfc);
+      opacity: 0;
+      transition: opacity .25s;
+    }
+
+    .btn-p:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 28px var(--gv);
+    }
+
+    .btn-p:hover::before {
+      opacity: 1;
+    }
+
+    .btn-s {
+      padding: .62rem 1.5rem;
+      border-radius: 50px;
+      background: transparent;
+      color: var(--t);
+      font-weight: 600;
+      font-size: .86rem;
+      border: 1.5px solid var(--b2);
+      transition: all .22s;
+    }
+
+    .btn-s:hover {
+      border-color: var(--v);
+      color: var(--v);
+      transform: translateY(-3px);
+    }
+
+    .h-stats {
+      display: flex;
+      align-items: center;
+      gap: 1.4rem;
+      margin-top: 1.7rem;
+      opacity: 0;
+      animation: fadeup .5s .68s both;
+    }
+
+    .sn {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      font-size: 1.8rem;
+      letter-spacing: -.05em;
+      background: var(--gr);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+    }
+
+    .sl {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .57rem;
+      color: var(--mu);
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      margin-top: 1px;
+    }
+
+    .sdiv {
+      width: 1px;
+      height: 28px;
+      background: var(--b2);
+    }
+
+    @keyframes fadeup {
+      from {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    /* ─── CARD ─── */
+    .card-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      animation: fadeup .7s .3s both;
+      position: relative;
+      z-index: 1;
+    }
+
+    .card-scene {
+      width: 280px;
+      height: 390px;
+      perspective: 1100px;
+    }
+
+    .card-body {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform .8s cubic-bezier(.4, 0, .15, 1);
+    }
+
+    .card-scene:hover .card-body,
+    .card-flipped {
+      transform: rotateY(180deg);
+    }
+
+    .cface {
+      position: absolute;
+      inset: 0;
+      border-radius: 22px;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      overflow: hidden;
+    }
+
+    /* Front */
+    .cfront {
+      background: var(--s2);
+      border: 1px solid var(--b2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cfront::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background: linear-gradient(125deg, rgba(255, 255, 255, 0.4) 0%, transparent 40%, rgba(255, 255, 255, 0.05) 100%);
+      opacity: 0;
+      transition: opacity 0.5s;
+      mix-blend-mode: overlay;
+      z-index: 10;
+    }
+
+    .card-scene:hover .cfront::after {
+      opacity: 1;
+    }
+
+    .cfront-accent {
+      height: 2.5px;
+      background: var(--gr);
+    }
+
+    .cfront-inner {
+      height: calc(100% - 2.5px);
+      padding: 2rem 1.4rem 1.4rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background:
+        radial-gradient(circle at 70% 0%, rgba(134, 100, 255, .25) 0%, transparent 55%),
+        radial-gradient(circle at 10% 100%, rgba(34, 211, 238, .15) 0%, transparent 50%);
+    }
+
+    .photo-wrap {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      padding: 3px;
+      background: var(--gr);
+      box-shadow: 0 0 0 5px rgba(134, 100, 255, .15), 0 15px 40px rgba(134, 100, 255, .3);
+      animation: pfloat 5s ease-in-out infinite;
+      flex-shrink: 0;
+    }
+
+    @keyframes pfloat {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .photo-wrap img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    .photo-fallback {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: var(--gr);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: #fff;
+      letter-spacing: -.04em;
+    }
+
+    /* light mode card */
+    [data-theme=light] .cfront {
+      background: #fff;
+      border-color: rgba(134, 100, 255, .25);
+      box-shadow: 0 15px 35px rgba(134, 100, 255, 0.1);
+    }
+
+    [data-theme=light] .cfront-inner {
+      background: radial-gradient(circle at 70% 0%, rgba(134, 100, 255, .1) 0%, transparent 55%);
+    }
+
+    .cname {
+      font-weight: 800;
+      font-size: 1.2rem;
+      letter-spacing: -.03em;
+      color: var(--t);
+      margin-top: 1.2rem;
+      text-align: center;
+    }
+
+    .crole {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .6rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      background: var(--gr);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-top: .35rem;
+      text-align: center;
+      line-height: 1.5;
+      font-weight: 700;
+    }
+
+    .cdivider {
+      width: 40px;
+      height: 1.5px;
+      background: var(--b2);
+      margin: 1.1rem auto;
+    }
+
+    .cstats {
+      display: flex;
+      gap: 1.4rem;
+      justify-content: center;
+    }
+
+    .csn {
+      font-weight: 800;
+      font-size: 1rem;
+      color: var(--t);
+      letter-spacing: -.04em;
+      line-height: 1;
+      text-align: center;
+    }
+
+    .csl {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .55rem;
+      color: var(--mu);
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      margin-top: 4px;
+      text-align: center;
+    }
+
+    .css {
+      width: 1.5px;
+      height: 24px;
+      background: var(--b2);
+    }
+
+    .chandles {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .6rem;
+      color: var(--t2);
+      margin-top: 1.2rem;
+      text-align: center;
+      line-height: 1.65;
+      opacity: .8;
+    }
+
+    .chint {
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .55rem;
+      color: var(--mu);
+      display: flex;
+      align-items: center;
+      gap: .35rem;
+      font-weight: 600;
+    }
+
+    .harr {
+      animation: harr 1.8s ease-in-out infinite;
+      display: inline-block;
+    }
+
+    @keyframes harr {
+
+      0%,
+      100% {
+        transform: translateX(0);
+      }
+
+      50% {
+        transform: translateX(4px);
+      }
+    }
+
+    /* Back */
+    .cback {
+      transform: rotateY(180deg);
+      background: linear-gradient(155deg, #0a0518 0%, #050812 100%);
+      border: 1px solid rgba(134, 100, 255, .3);
+      padding: 1.8rem 1.6rem;
+      display: flex;
+      flex-direction: column;
+      gap: .8rem;
+      justify-content: center;
+    }
+
+    [data-theme=light] .cback {
+      background: linear-gradient(155deg, #e8e4ff 0%, #e4e8ff 100%);
+      box-shadow: 0 15px 35px rgba(134, 100, 255, 0.15);
+    }
+
+    .cback-line {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2.5px;
+      background: var(--gr);
+    }
+
+    .cc {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border-style: solid;
+    }
+
+    .cc.tr {
+      top: 12px;
+      right: 12px;
+      border-width: 2px 2px 0 0;
+      border-color: rgba(34, 211, 238, .4);
+    }
+
+    .cc.bl {
+      bottom: 12px;
+      left: 12px;
+      border-width: 0 0 2px 2px;
+      border-color: rgba(134, 100, 255, .4);
+    }
+
+    .cback-name {
+      font-weight: 800;
+      font-size: 1.4rem;
+      letter-spacing: -.04em;
+      background: var(--gr);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+    }
+
+    .cback-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .55rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--t2);
+      margin-top: .2rem;
+      line-height: 1.5;
+    }
+
+    .cbdiv {
+      height: 1px;
+      background: rgba(255, 255, 255, .07);
+    }
+
+    [data-theme=light] .cbdiv {
+      background: var(--b);
+    }
+
+    .cbrow {
+      display: flex;
+      align-items: flex-start;
+      gap: .6rem;
+    }
+
+    .cbico {
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      flex-shrink: 0;
+      background: rgba(124, 92, 252, .12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+    }
+
+    .cbico svg {
+      width: 11px;
+      height: 11px;
+      stroke: var(--v);
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .cbl {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .54rem;
+      color: var(--mu);
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+
+    .cbv {
+      font-size: .8rem;
+      color: var(--t2);
+      margin-top: 2px;
+      font-weight: 500;
+      line-height: 1.3;
+    }
+
+    .cbtags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .28rem;
+      margin-top: .28rem;
+    }
+
+    .cbtag {
+      font-size: .54rem;
+      padding: .14rem .46rem;
+      border-radius: 50px;
+      background: rgba(124, 92, 252, .1);
+      border: 1px solid rgba(124, 92, 252, .2);
+      color: var(--v);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .cback-note {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .54rem;
+      color: var(--mu);
+      border-top: 1px solid rgba(255, 255, 255, .06);
+      padding-top: .55rem;
+      margin-top: .1rem;
+    }
+
+    [data-theme=light] .cback-note {
+      border-color: var(--b);
+    }
+
+    /* scroll cue */
+    .scue {
+      position: absolute;
+      bottom: 1.8rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .45rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .55rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--mu);
+      animation: scue 2s ease-in-out infinite;
+    }
+
+    .sm {
+      width: 14px;
+      height: 22px;
+      border: 1.5px solid var(--b2);
+      border-radius: 7px;
+      position: relative;
+    }
+
+    .sm::after {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 4px;
+      border-radius: 1px;
+      background: var(--v);
+      animation: smd 2s ease-in-out infinite;
+    }
+
+    @keyframes smd {
+      0% {
+        top: 3px;
+        opacity: 1;
+      }
+
+      75% {
+        top: 12px;
+        opacity: 0;
+      }
+
+      100% {
+        top: 3px;
+        opacity: 0;
+      }
+    }
+
+    @keyframes scue {
+
+      0%,
+      100% {
+        opacity: .4;
+        transform: translateX(-50%) translateY(0);
+      }
+
+      50% {
+        opacity: .8;
+        transform: translateX(-50%) translateY(4px);
+      }
+    }
+
+    /* keyframes for new elements */
+    @keyframes spin {
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+
+    /* MAGIC HOVER SPOTLIGHT */
+    .magic-hover {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .magic-hover::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background: radial-gradient(400px circle at var(--mx, 50%) var(--my, 50%), rgba(134, 100, 255, 0.18), transparent 40%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      mix-blend-mode: screen;
+      pointer-events: none;
+    }
+
+    .magic-hover:hover::before {
+      opacity: 1;
+    }
+
+    [data-theme=light] .magic-hover::before {
+      background: radial-gradient(400px circle at var(--mx, 50%) var(--my, 50%), rgba(255, 255, 255, 0.8), transparent 50%);
+      mix-blend-mode: overlay;
+      opacity: 0;
+    }
+
+    [data-theme=light] .magic-hover:hover::before {
+      opacity: 1;
+    }
+
+    /* ─── SECTION BASE ─── */
+    .sec {
+      padding: 4rem 5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .sec-alt {
+      background: var(--bg2);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .6rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--v);
+      background: rgba(124, 92, 252, .08);
+      border: 1px solid rgba(124, 92, 252, .16);
+      padding: .25rem .75rem;
+      border-radius: 50px;
+      margin-bottom: .65rem;
+    }
+
+    .eyebrow svg {
+      width: 9px;
+      height: 9px;
+    }
+
+    h2 {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      letter-spacing: -.04em;
+      line-height: .95;
+      margin-bottom: .5rem;
+    }
+
+    h2 .g {
+      background: var(--gr);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .dline {
+      width: 32px;
+      height: 2px;
+      border-radius: 2px;
+      background: var(--gr);
+      margin: .65rem 0 .9rem;
+    }
+
+    .sdesc {
+      font-size: .9rem;
+      color: var(--t2);
+      max-width: 460px;
+      line-height: 1.7;
+    }
+
+    /* ─── SKILLS ─── */
+    .sgrid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: .8rem;
+      margin-top: 2rem;
+    }
+
+    .sk {
+      background: var(--s);
+      border: 1px solid var(--b);
+      border-radius: var(--r);
+      padding: 1.3rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform .25s var(--ease), border-color .25s, box-shadow .25s;
+    }
+
+    .sk::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--gr);
+      opacity: 0;
+      transition: opacity .25s;
+    }
+
+    .sk:hover {
+      transform: translateY(-5px);
+      border-color: rgba(124, 92, 252, .28);
+      box-shadow: 0 14px 36px rgba(124, 92, 252, .1);
+    }
+
+    .sk:hover::before {
+      opacity: .04;
+    }
+
+    .sk-ic {
+      width: 30px;
+      height: 30px;
+      border-radius: 7px;
+      background: rgba(124, 92, 252, .1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: .7rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .sk-ic svg {
+      width: 14px;
+      height: 14px;
+      stroke: var(--v);
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .sk-n {
+      font-size: .86rem;
+      font-weight: 700;
+      margin-bottom: .22rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .sk-d {
+      font-size: .74rem;
+      color: var(--t2);
+      line-height: 1.58;
+      position: relative;
+      z-index: 1;
+    }
+
+    .sk-bar-wrap {
+      margin-top: .8rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .sk-pct {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .58rem;
+      color: var(--v);
+      float: right;
+      margin-top: -.8rem;
+    }
+
+    .sk-bg {
+      height: 1.5px;
+      background: var(--b2);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .sk-bar {
+      height: 100%;
+      background: var(--gr);
+      width: 0;
+      border-radius: 2px;
+      transition: width 1.3s var(--ease);
+    }
+
+    /* ─── PROJECTS ─── */
+    .pgrid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.5rem;
+      margin-top: 3rem;
+    }
+
+    .pcard {
+      background: var(--s);
+      border: 1px solid var(--b);
+      border-radius: var(--r);
+      overflow: hidden;
+      transition: transform .4s var(--ease), border-color .4s, box-shadow .4s;
+      display: block;
+    }
+
+    .pcard:hover {
+      transform: translateY(-8px);
+      border-color: rgba(124, 92, 252, .35);
+      box-shadow: 0 25px 44px rgba(0, 0, 0, .3);
+    }
+
+    .pthumb {
+      height: 170px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      transition: transform .5s;
+    }
+
+    .pcard:hover .pthumb img {
+      transform: scale(1.06) !important;
+      filter: brightness(1) contrast(1.1) !important;
+    }
+
+    .pcard:hover .pthumb {
+      transform: scale(1.03);
+    }
+
+    .pto {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, .45));
+    }
+
+    /* project styled logos */
+    .plogo {
+      position: relative;
+      z-index: 1;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      font-weight: 800;
+      letter-spacing: -.03em;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, .25);
+    }
+
+    .pb {
+      padding: 1.2rem;
+    }
+
+    .ptag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .57rem;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+      color: var(--v);
+      background: rgba(124, 92, 252, .09);
+      border: 1px solid rgba(124, 92, 252, .15);
+      padding: .16rem .52rem;
+      border-radius: 50px;
+      display: inline-block;
+      margin-bottom: .55rem;
+    }
+
+    .pt {
+      font-size: .96rem;
+      font-weight: 700;
+      margin-bottom: .38rem;
+    }
+
+    .pd {
+      font-size: .76rem;
+      color: var(--t2);
+      line-height: 1.6;
+      margin-bottom: .8rem;
+    }
+
+    .pa {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .6rem;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      color: var(--v);
+      display: inline-flex;
+      align-items: center;
+      gap: .3rem;
+      transition: gap .18s;
+    }
+
+    .pcard:hover .pa {
+      gap: .6rem;
+    }
+
+    /* ─── AI TOOLS ─── */
+    .mq-wrap {
+      overflow: hidden;
+      position: relative;
+      margin-top: 2rem;
+    }
+
+    .mq-wrap::before,
+    .mq-wrap::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 80px;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .mq-wrap::before {
+      left: 0;
+      background: linear-gradient(90deg, var(--bg2), transparent);
+    }
+
+    .mq-wrap::after {
+      right: 0;
+      background: linear-gradient(-90deg, var(--bg2), transparent);
+    }
+
+    .mq-track {
+      display: flex;
+      gap: .7rem;
+      width: max-content;
+      animation: mq 22s linear infinite;
+    }
+
+    .mq-track:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes mq {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    .tool-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      flex-shrink: 0;
+      background: var(--s);
+      border: 1px solid var(--b2);
+      border-radius: 50px;
+      padding: .42rem .9rem;
+      font-size: .76rem;
+      font-weight: 600;
+      color: var(--t2);
+      transition: all .18s;
+    }
+
+    .tool-chip:hover {
+      border-color: var(--v);
+      color: var(--v);
+      transform: translateY(-2px);
+    }
+
+    .tdot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ─── CREATIVES (MINIMALIST HORIZONTAL) ─── */
+    .cr-wrap {
+      overflow: hidden;
+      position: relative;
+      margin-top: 2rem;
+      perspective: 1000px;
+    }
+
+    .cr-wrap::before,
+    .cr-wrap::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100px;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .cr-wrap::before {
+      left: 0;
+      background: linear-gradient(90deg, var(--bg), transparent);
+    }
+
+    .cr-wrap::after {
+      right: 0;
+      background: linear-gradient(-90deg, var(--bg), transparent);
+    }
+
+    .cr-track {
+      display: flex;
+      gap: 1.8rem;
+      width: max-content;
+      animation: mq 35s linear infinite;
+      padding: 2rem 0;
+    }
+
+    .cr-track:hover {
+      animation-play-state: paused;
+    }
+
+    .cr-card {
+      width: 400px;
+      height: 180px;
+      flex-shrink: 0;
+      border-radius: 24px;
+      overflow: hidden;
+      background: var(--s);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      transition: transform .5s cubic-bezier(0.2, 0.8, 0.2, 1), border-color .4s, box-shadow .4s;
+      will-change: transform;
+      transform-style: preserve-3d;
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: 1.4rem;
+      gap: 1.4rem;
+    }
+
+    [data-theme=light] .cr-card {
+      border-color: rgba(0, 0, 0, 0.06);
+    }
+
+    .cr-card:hover {
+      border-color: rgba(134, 100, 255, .4);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, .4);
+      z-index: 10;
+      transform: translateY(-8px) scale(1.03);
+    }
+
+    .cr-card img {
+      width: 130px;
+      height: 130px;
+      object-fit: cover;
+      border-radius: 12px;
+      flex-shrink: 0;
+      transition: transform 0.6s ease;
+      filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+    }
+
+    .cr-card:hover img {
+      transform: scale(1.05) translateZ(10px);
+    }
+
+    .cr-info {
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      transform: translateZ(15px);
+    }
+
+    .cr-t {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--t);
+      margin-bottom: .4rem;
+    }
+
+    .cr-sub {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .65rem;
+      color: var(--mu);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      line-height: 1.4;
+    }
+
+    /* ─── CUSTOM PROJECT CARDS ─── */
+    .pcard-dingding {
+      background: rgba(5, 10, 5, 0.4);
+      border-color: rgba(0, 255, 100, 0.15);
+    }
+
+    .pcard-baseplate {
+      background: rgba(5, 5, 15, 0.4);
+      border-color: rgba(99, 102, 241, 0.2);
+    }
+
+    [data-theme=light] .pcard-dingding {
+      background: #eaf8ee;
+      border-color: rgba(0, 200, 80, 0.3);
+    }
+
+    [data-theme=light] .pcard-baseplate {
+      background: #eef1ff;
+      border-color: rgba(99, 102, 241, 0.3);
+    }
+
+    [data-theme=light] .cr-img {
+      background: #f0f0fa !important;
+    }
+
+    /* 3D Tilt Utilities */
+    .tilt {
+      transform-style: preserve-3d;
+      will-change: transform;
+      transition: transform 0.1s;
+    }
+
+    .tilt:hover {
+      transition: transform 0.1s;
+    }
+
+    .tilt-leave {
+      transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    /* ─── CONTACT ─── */
+    .cgrid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 3rem;
+      align-items: start;
+      margin-top: 2rem;
+    }
+
+    .ci-list {
+      display: flex;
+      flex-direction: column;
+      gap: .65rem;
+    }
+
+    .ci {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      background: var(--s);
+      border: 1px solid var(--b);
+      border-radius: 11px;
+      padding: .7rem .9rem;
+      transition: transform .22s, border-color .22s;
+    }
+
+    .ci:hover {
+      transform: translateX(6px);
+      border-color: rgba(124, 92, 252, .22);
+    }
+
+    .ci-ic {
+      width: 30px;
+      height: 30px;
+      border-radius: 7px;
+      background: rgba(124, 92, 252, .1);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ci-ic svg {
+      width: 13px;
+      height: 13px;
+      stroke: var(--v);
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .ci-l {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .54rem;
+      color: var(--mu);
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+
+    .ci-v {
+      font-size: .82rem;
+      font-weight: 600;
+      margin-top: 2px;
+    }
+
+    .cform {
+      background: var(--s);
+      border: 1px solid var(--b);
+      border-radius: 18px;
+      padding: 1.6rem;
+      position: relative;
+    }
+
+    .cfc {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border-style: solid;
+    }
+
+    .cfc.tr {
+      top: 11px;
+      right: 11px;
+      border-width: 2px 2px 0 0;
+      border-color: rgba(124, 92, 252, .28);
+    }
+
+    .cfc.bl {
+      bottom: 11px;
+      left: 11px;
+      border-width: 0 0 2px 2px;
+      border-color: rgba(34, 211, 238, .22);
+    }
+
+    .cfh {
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: -.03em;
+      margin-bottom: 1.1rem;
+    }
+
+    .cfrow {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .7rem;
+    }
+
+    .fg {
+      margin-bottom: .7rem;
+    }
+
+    .fg label {
+      display: block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .54rem;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      color: var(--mu);
+      margin-bottom: .32rem;
+    }
+
+    .fg input,
+    .fg textarea {
+      width: 100%;
+      padding: .6rem .85rem;
+      background: var(--bg2);
+      border: 1.5px solid var(--b);
+      border-radius: 8px;
+      color: var(--t);
+      font-family: 'Outfit', sans-serif;
+      font-size: .86rem;
+      outline: none;
+      transition: border-color .18s, box-shadow .18s;
+    }
+
+    [data-theme=light] .fg input,
+    [data-theme=light] .fg textarea {
+      background: var(--bg);
+    }
+
+    .fg input:focus,
+    .fg textarea:focus {
+      border-color: var(--v);
+      box-shadow: 0 0 0 3px rgba(124, 92, 252, .08);
+    }
+
+    .fg textarea {
+      height: 95px;
+      resize: none;
+    }
+
+    .bsend {
+      width: 100%;
+      padding: .7rem;
+      background: var(--gr);
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: .88rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform .22s, box-shadow .22s;
+    }
+
+    .bsend:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 28px var(--gv);
+    }
+
+    .bsend::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -60%;
+      width: 35%;
+      height: 200%;
+      background: rgba(255, 255, 255, .12);
+      transform: skewX(-20deg);
+      transition: left .45s;
+    }
+
+    .bsend:hover::after {
+      left: 130%;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      border-top: 1px solid var(--b);
+      padding: 1.6rem 5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: .8rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .fl {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .6rem;
+      color: var(--mu);
+      letter-spacing: .04em;
+    }
+
+    .fr {
+      display: flex;
+      gap: 1.4rem;
+    }
+
+    .fr a {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .58rem;
+      color: var(--mu);
+      transition: color .2s;
+      letter-spacing: .04em;
+    }
+
+    .fr a:hover {
+      color: var(--v);
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media(max-width:900px) {
+
+      nav,
+      nav.sc,
+      footer,
+      .sec {
+        padding-left: 1.4rem;
+        padding-right: 1.4rem;
+      }
+
+      #hero {
+        grid-template-columns: 1fr;
+        padding: 3rem 1.4rem 4rem;
+        gap: 2rem;
+      }
+
+      .card-wrap {
+        display: none;
+      }
+
+      .sgrid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .pgrid {
+        grid-template-columns: 1fr;
+      }
+
+      .cgrid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+  <style id="custom-live-styles">
+    .sec {
+      padding: 6rem 1.5rem !important;
+    }
+  </style>
+</head>
+
+<body class="">
+
+  <div id="c-dot" style="left: 1428px; top: 305px;"></div>
+  <div id="c-ring" style="left: 1424.9px; top: 302.7px;"></div>
+
+  <!-- NAV -->
+  <header>
+    <nav id="main-nav" aria-label="Main Navigation" class="sc">
+      <a class="logo" href="#" onmouseenter="enter()" onmouseleave="leave()" aria-label="Home">AC<div class="logo-dot">
+        </div></a>
+      <ul class="nav-links">
+        <li><a href="#skills" onmouseenter="enter()" onmouseleave="leave()">Skills</a></li>
+        <li><a href="#work" onmouseenter="enter()" onmouseleave="leave()">Work</a></li>
+        <li><a href="#aitools" onmouseenter="enter()" onmouseleave="leave()">AI Tools</a></li>
+        <li><a href="#creatives" onmouseenter="enter()" onmouseleave="leave()">Creatives</a></li>
+        <li><a href="#contact" onmouseenter="enter()" onmouseleave="leave()">Contact</a></li>
+      </ul>
+      <div class="tgl" id="tgl" role="switch" aria-checked="false" aria-label="Toggle dark theme" tabindex="0"
+        onmouseenter="enter()" onmouseleave="leave()">
+        <div class="tgl-k" id="tglk">🌙</div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ═══ HERO ═══ -->
+    <section id="hero">
+      <div class="blob b1"></div>
+      <div class="blob b2"></div>
+      <div class="grid-bg"></div>
+
+      <div style="position:relative;z-index:1;">
+        <div class="h-eyebrow">Digital Marketer · SEO · Meta Ads</div>
+        <h1 style="transition: outline 0.2s;">Aditya Chauhan</h1>
+        <div class="h-meta"><span class="live"></span>DingDing · Gurugram · Open to Opportunities</div>
+        <p class="h-desc" style="transition: outline 0.2s;">I help businesses grow online — through SEO, paid media, and AI-driven marketing strategies that produce measurable results.</p>
+        <div class="h-btns">
+          <a href="#work" class="btn-p" onmouseenter="enter()" onmouseleave="leave()"><span>View My Work →</span></a>
+          <a href="#contact" class="btn-s" onmouseenter="enter()" onmouseleave="leave()">Let's Talk</a>
+        </div>
+        <div class="h-stats">
+          <div>
+            <div class="sn">1yr+</div>
+            <div class="sl">Experience</div>
+          </div>
+          <div class="sdiv"></div>
+          <div>
+            <div class="sn">4+</div>
+            <div class="sl">Projects</div>
+          </div>
+          <div class="sdiv"></div>
+          <div>
+            <div class="sn">500+</div>
+            <div class="sl">Network</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD -->
+      <div class="card-wrap">
+        <!-- Magic Lottie Background behind card -->
+        <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_UqxQA7.json" background="transparent"
+          speed="1"
+          style="width: 450px; height: 450px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: -1; pointer-events: none; opacity: 0; transition: opacity 0.5s;"
+          id="magic-bg" direction="1" mode="normal"></lottie-player>
+
+        <div class="card-scene" id="card-scene"
+          onmouseenter="document.getElementById('magic-bg').play(); document.getElementById('magic-bg').style.opacity=0.6;"
+          onmouseleave="document.getElementById('magic-bg').stop(); document.getElementById('magic-bg').style.opacity=0;">
+          <div class="card-body" id="card-body" style="transform: rotateY(180deg);">
+
+            <!-- FRONT -->
+            <div class="cface cfront">
+              <div class="cfront-accent"></div>
+              <div class="cfront-inner">
+                <div class="photo-wrap">
+                  <img id="p-img" src="assets/upload_1773316741.png" alt="Profile Photo" crossorigin="anonymous">
+                </div>
+                <div class="cname" style="transition: outline 0.2s;">Aditya Chauhan</div>
+                <div class="crole" style="transition: outline 0.2s;">Digital Marketing Executive<br>SEO · Meta Ads · AI
+                  Strategy</div>
+                <div class="cdivider"></div>
+                <div class="cstats">
+                  <div>
+                    <div class="csn">1yr+</div>
+                    <div class="csl">Exp</div>
+                  </div>
+                  <div class="css"></div>
+                  <div>
+                    <div class="csn">558+</div>
+                    <div class="csl">Followers</div>
+                  </div>
+                  <div class="css"></div>
+                  <div>
+                    <div class="csn">500+</div>
+                    <div class="csl">Network</div>
+                  </div>
+                </div>
+                <div class="chandles">adityachauhanpro · @dream.hope.ak</div>
+              </div>
+              <div class="chint">hover to flip <span class="harr">→</span></div>
+            </div>
+
+            <!-- BACK -->
+            <div class="cface cback">
+              <div class="cback-line"></div>
+              <div class="cc tr"></div>
+              <div class="cc bl"></div>
+              <div class="cback-name">Aditya<br>Chauhan</div>
+              <div class="cback-title">Digital Marketing Executive<br>SEO Specialist · Prompt Engineer</div>
+              <div class="cbdiv"></div>
+              <div class="cbrow">
+                <div class="cbico"><svg viewBox="0 0 24 24">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg></div>
+                <div>
+                  <div class="cbl">Location</div>
+                  <div class="cbv">Gurugram, Haryana</div>
+                </div>
+              </div>
+              <div class="cbrow">
+                <div class="cbico"><svg viewBox="0 0 24 24">
+                    <rect x="2" y="7" width="20" height="14" rx="2"></rect>
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                  </svg></div>
+                <div>
+                  <div class="cbl">Current</div>
+                  <div class="cbv">Mktg. Executive — DingDing</div>
+                </div>
+              </div>
+              <div class="cbrow">
+                <div class="cbico"><svg viewBox="0 0 24 24">
+                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                  </svg></div>
+                <div>
+                  <div class="cbl">Skills</div>
+                  <div class="cbtags">
+                    <span class="cbtag">SEO</span><span class="cbtag">Meta Ads</span><span class="cbtag">SMO</span><span
+                      class="cbtag">AI Tools</span><span class="cbtag">Automation</span>
+                  </div>
+                </div>
+              </div>
+              <div class="cbdiv"></div>
+              <div class="cback-note">Open to freelance & collaborations</div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="scue">
+        <div class="sm"></div>Scroll
+      </div>
+    </section>
+
+    <!-- ═══ SKILLS ═══ -->
+    <section id="skills" class="sec sec-alt">
+      <div data-rev="up" class="vis" style="transition-delay: 0s;">
+        <div class="eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+          </svg> Skills</div>
+        <h2 style="transition: outline 0.2s;">What I <span class="g" style="transition: outline 0.2s;">Do Best</span>
+        </h2>
+        <div class="dline"></div>
+        <p class="sdesc" style="transition: outline 0.2s;">I specialize in data-driven marketing, combining deep SEO knowledge with high-converting Meta Ads and modern AI workflows. My approach isn't just about traffic—it's about building scalable engines that generate compounding revenue.</p>
+      </div>
+      <div class="sgrid">
+        
+            <div class="sk" data-rev="up" style="--d:.15s" onmouseenter="enter()" onmouseleave="leave()">
+              <div class="sk-n">Search Engine Optimisation</div>
+              <div class="sk-d">Keyword research, on-page SEO, link building, technical audits and ranking strategy.</div>
+              <div class="sk-bar-wrap"><div class="sk-pct">88%</div><div class="sk-bg"><div class="sk-bar" data-p="88" style="width:88%;"></div></div></div>
+            </div>
+            
+            <div class="sk" data-rev="up" style="--d:.24s" onmouseenter="enter()" onmouseleave="leave()">
+              <div class="sk-n">Meta Ads & Paid Social</div>
+              <div class="sk-d">Campaign setup, audience targeting, A/B testing, budget optimisation and ROAS tracking.</div>
+              <div class="sk-bar-wrap"><div class="sk-pct">84%</div><div class="sk-bg"><div class="sk-bar" data-p="84" style="width:84%;"></div></div></div>
+            </div>
+            
+            <div class="sk" data-rev="up" style="--d:.32s" onmouseenter="enter()" onmouseleave="leave()">
+              <div class="sk-n">Content & Copywriting</div>
+              <div class="sk-d">Ad copy, social captions, long-form articles, video scripts and brand messaging.</div>
+              <div class="sk-bar-wrap"><div class="sk-pct">86%</div><div class="sk-bg"><div class="sk-bar" data-p="86" style="width:86%;"></div></div></div>
+            </div>
+            
+            <div class="sk" data-rev="up" style="--d:.4s" onmouseenter="enter()" onmouseleave="leave()">
+              <div class="sk-n">AI Tools & Prompt Engineering</div>
+              <div class="sk-d">Advanced prompting across ChatGPT, Claude, Midjourney and 10+ AI platforms daily.</div>
+              <div class="sk-bar-wrap"><div class="sk-pct">92%</div><div class="sk-bg"><div class="sk-bar" data-p="92" style="width:92%;"></div></div></div>
+            </div>
+            
+            <div class="sk" data-rev="up" style="--d:.5s" onmouseenter="enter()" onmouseleave="leave()">
+              <div class="sk-n">Social Media Marketing</div>
+              <div class="sk-d">Platform strategy, organic growth, content calendars, community management and analytics.</div>
+              <div class="sk-bar-wrap"><div class="sk-pct">85%</div><div class="sk-bg"><div class="sk-bar" data-p="85" style="width:85%;"></div></div></div>
+            </div>
+            
+            <div class="sk" data-rev="up" style="--d:.6s" onmouseenter="enter()" onmouseleave="leave()">
+              <div class="sk-n">Marketing Automation</div>
+              <div class="sk-d">Python & Google Apps Script workflows, automated reporting, CRM integrations.</div>
+              <div class="sk-bar-wrap"><div class="sk-pct">80%</div><div class="sk-bg"><div class="sk-bar" data-p="80" style="width:80%;"></div></div></div>
+            </div>
+            
+      </div>
+    </section>
+
+    <!-- ═══ WORK ═══ -->
+    <section id="work" class="sec">
+      <div data-rev="up" class="vis" style="transition-delay: 0s;">
+        <div class="eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 2 7 12 22 22 7 12 2"></polygon>
+          </svg> Work</div>
+        <h2 style="transition: outline 0.2s;">Featured <span class="g" style="transition: outline 0.2s;">Projects</span>
+        </h2>
+        <div class="dline"></div>
+      </div>
+      <div class="pgrid">
+
+        <!-- DINGDING -->
+        <a href="#" class="pcard pcard-dingding tilt vis tilt-leave" data-rev="up" onmouseenter="enter()"
+          onmouseleave="leave()"
+          style="grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 0px; align-items: stretch; border-radius: 20px; box-shadow: rgba(0, 0, 0, 0.4) 0px 10px 40px; overflow: hidden; position: relative; transition-delay: 0s; --mx: 207px; --my: 239.39999389648438px; transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);">
+
+          <!-- Animated Glow Backdrop -->
+          <div
+            style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at center, rgba(0, 255, 100, 0.05), transparent 60%); z-index: 0; pointer-events: none; animation: spin 20s linear infinite;">
+          </div>
+
+          <div class="pthumb"
+            style="background:linear-gradient(to right, #ffffff, #f0f0f5); border-radius: 0; border: none; padding: 2rem; display:flex; justify-content:center; align-items:center; overflow:hidden; position:relative; z-index: 1;">
+            <img src="assets/upload_1773314881.jpg" alt="DingDing Logo"
+              style="width: 80%; height: auto; max-height: 100%; object-fit: contain; transform: scale(1.05) translateZ(30px); transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1); opacity: 1;"
+              class="hover-scale-img" data-orig-title="" title="">
+          </div>
+
+          <div class="pb"
+            style="background: transparent; border-radius: 0; border: none; border-left: 1px solid rgba(0, 255, 100, 0.1); padding: 3rem; display: flex; flex-direction: column; justify-content: center; z-index: 1; transform: translateZ(20px);">
+            <span class="ptag"
+              style="align-self: flex-start; margin-bottom: 1rem; font-size: 0.75rem; padding: 0.5rem 1rem; transition: outline 0.2s;">SEO
+              · Social Media · Brand Identity</span>
+            <div class="pt" style="font-size: 2.5rem; margin-bottom: 1rem; transition: outline 0.2s;">DingDing — Digital
+              Marketer</div>
+            <div class="pd" style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 2rem; transition: outline 0.2s;">
+              As a Digital Marketing Executive for this fast-growing cloud kitchen &amp; tiffin service, I manage
+              end-to-end Meta Ads, creative strategy, and menu promotions to drive daily subscriptions across Gurugram.
+            </div>
+            <span class="pa" style="font-size: 1rem;">View Marketing Stack →</span>
+          </div>
+        </a>
+
+        <!-- BASEPLATE INTERIOR SEO -->
+        <a href="#" class="pcard pcard-baseplate tilt vis tilt-leave" data-rev="up"
+          style="--d: .1s; grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 0px; align-items: stretch; border-radius: 20px; box-shadow: rgba(0, 0, 0, 0.4) 0px 10px 40px; overflow: hidden; position: relative; transition-delay: 0.1s; --mx: 179px; --my: 91.04998779296875px; transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);"
+          onmouseenter="enter()" onmouseleave="leave()">
+
+          <!-- Animated Glow Backdrop -->
+          <div
+            style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at center, rgba(99, 102, 241, 0.05), transparent 60%); z-index: 0; pointer-events: none; animation: spin 25s linear infinite reverse;">
+          </div>
+
+          <div class="pb"
+            style="background: transparent; border-radius: 0; border: none; border-right: 1px solid rgba(99, 102, 241, 0.1); padding: 3rem; display: flex; flex-direction: column; justify-content: center; z-index: 1; transform: translateZ(20px);">
+            <span class="ptag"
+              style="align-self: flex-start; margin-bottom: 1rem; font-size: 0.75rem; padding: 0.5rem 1rem; background: rgba(99, 102, 241, 0.15); color: rgb(129, 140, 248); transition: outline 0.2s;">SEO
+              · Interior Design · 7 Months</span>
+            <div class="pt" style="font-size: 2.5rem; margin-bottom: 1rem; transition: outline 0.2s;">Baseplate Interior
+            </div>
+            <div class="pd" style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 2rem; transition: outline 0.2s;">
+              Led Search Engine Optimization (SEO) initiatives to increase organic traffic, improve search rankings for
+              luxury interior design queries, and drive high-intent leads over a 7-month engagement.</div>
+            <span class="pa" style="font-size: 1rem;">View SEO Strategy →</span>
+          </div>
+
+          <div class="pthumb"
+            style="background:transparent; border-radius: 0; border: none; padding: 0; display:flex; justify-content:center; align-items:center; position:relative; z-index: 1; overflow: hidden;">
+            <!-- New Baseplate Logo -->
+            <div
+              style="position:relative; z-index:1; display:flex; align-items:center; justify-content:center; transform: translateZ(40px); width: 100%; height: 100%;">
+              <img src="assets/upload_1773314896.png" alt="Baseplate Interior Logo"
+                style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1); transform: scale(1); opacity: 1;"
+                onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'"
+                data-orig-title="" title="">
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ═══ AI TOOLS ═══ -->
+    <section id="aitools" class="sec sec-alt">
+      <div data-rev="up" class="vis" style="transition-delay: 0s;">
+        <div class="eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"></path>
+          </svg> Arsenal</div>
+        <h2 style="transition: outline 0.2s;">AI Tools I <span class="g" style="transition: outline 0.2s;">Master</span>
+        </h2>
+        <div class="dline"></div>
+        <p class="sdesc" style="transition: outline 0.2s;">Fluent across all major AI platforms — and an expert at
+          prompting them for real marketing results.</p>
+      </div>
+      <div class="mq-wrap">
+        <div class="mq-track">
+          <span class="tool-chip" onmouseenter="enter()" onmouseleave="leave()"><span class="tdot"
+              style="background:#10a37f"></span>ChatGPT</span>
+          <span class="tool-chip" onmouseenter="enter()" onmouseleave="leave()"><span class="tdot"
+              style="background:#cc785c"></span>Claude</span>
+          <span class="tool-chip" onmouseenter="enter()" onmouseleave="leave()"><span class="tdot"
+              style="background:#4f46e5"></span>Midjourney</span>
+          <span class="tool-chip" onmouseenter="enter()" onmouseleave="leave()"><span class="tdot"
+              style="background:#f59e0b"></span>DALL·E 3</span>
+          <span class="tool-chip" onmouseenter="enter()" onmouseleave="leave()"><span class="tdot"
+              style="background:#ef4444"></span>Runway ML</span>
+          <span class="tool-chip" onmouseenter="enter()" onmouseleave="leave()"><span class="tdot"
+              style="background:#7c5cfc"></span>Sora</span>
+          <span class="tool-chip" onmouseenter="enter()" onmouseleave="leave()"><span class="tdot"
+              style="background:#06b6d4"></span>Perplexity</span>
+          <span class="tool-chip" onmouseenter="enter()" onmouseleave="leave()"><span class="tdot"
+              style="background:#f97316"></span>ElevenLabs</span>
+          <span class="tool-chip" onmouseenter="enter()" onmouseleave="leave()"><span class="tdot"
+              style="background:#22c55e"></span>HeyGen</span>
+          <span class="tool-chip" onmouseenter="enter()" onmouseleave="leave()"><span class="tdot"
+              style="background:#a855f7"></span>Gemini</span>
+          <span class="tool-chip" onmouseenter="enter()" onmouseleave="leave()"><span class="tdot"
+              style="background:#ec4899"></span>Adobe Firefly</span>
+          <span class="tool-chip" onmouseenter="enter()" onmouseleave="leave()"><span class="tdot"
+              style="background:#3b82f6"></span>Make.com</span>
+          <span class="tool-chip" onmouseenter="enter()" onmouseleave="leave()"><span class="tdot"
+              style="background:#0ea5e9"></span>Canva AI</span>
+          <span class="tool-chip" onmouseenter="enter()" onmouseleave="leave()"><span class="tdot"
+              style="background:#8b5cf6"></span>Kling AI</span>
+          <!-- dup -->
+          <span class="tool-chip" onmouseenter="enter()" onmouseleave="leave()"><span class="tdot"
+              style="background:#10a37f"></span>ChatGPT</span>
+          <span class="tool-chip" onmouseenter="enter()" onmouseleave="leave()"><span class="tdot"
+              style="background:#cc785c"></span>Claude</span>
+          <span class="tool-chip" onmouseenter="enter()" onmouseleave="leave()"><span class="tdot"
+              style="background:#4f46e5"></span>Midjourney</span>
+          <span class="tool-chip" onmouseenter="enter()" onmouseleave="leave()"><span class="tdot"
+              style="background:#f59e0b"></span>DALL·E 3</span>
+          <span class="tool-chip" onmouseenter="enter()" onmouseleave="leave()"><span class="tdot"
+              style="background:#ef4444"></span>Runway ML</span>
+          <span class="tool-chip" onmouseenter="enter()" onmouseleave="leave()"><span class="tdot"
+              style="background:#7c5cfc"></span>Sora</span>
+          <span class="tool-chip" onmouseenter="enter()" onmouseleave="leave()"><span class="tdot"
+              style="background:#06b6d4"></span>Perplexity</span>
+          <span class="tool-chip" onmouseenter="enter()" onmouseleave="leave()"><span class="tdot"
+              style="background:#f97316"></span>ElevenLabs</span>
+          <span class="tool-chip" onmouseenter="enter()" onmouseleave="leave()"><span class="tdot"
+              style="background:#22c55e"></span>HeyGen</span>
+          <span class="tool-chip" onmouseenter="enter()" onmouseleave="leave()"><span class="tdot"
+              style="background:#a855f7"></span>Gemini</span>
+          <span class="tool-chip" onmouseenter="enter()" onmouseleave="leave()"><span class="tdot"
+              style="background:#ec4899"></span>Adobe Firefly</span>
+          <span class="tool-chip" onmouseenter="enter()" onmouseleave="leave()"><span class="tdot"
+              style="background:#3b82f6"></span>Make.com</span>
+          <span class="tool-chip" onmouseenter="enter()" onmouseleave="leave()"><span class="tdot"
+              style="background:#0ea5e9"></span>Canva AI</span>
+          <span class="tool-chip" onmouseenter="enter()" onmouseleave="leave()"><span class="tdot"
+              style="background:#8b5cf6"></span>Kling AI</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ CREATIVES ═══ -->
+    <section id="creatives" class="sec">
+      <div data-rev="up" class="vis" style="transition-delay: 0s;">
+        <div class="eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+            <polyline points="21 15 16 10 5 21"></polyline>
+          </svg> Creative Work</div>
+        <h2 style="transition: outline 0.2s;">Creatives &amp; <span class="g"
+            style="transition: outline 0.2s;">Designs</span></h2>
+        <div class="dline"></div>
+        <p class="sdesc" style="transition: outline 0.2s;">Brand assets, ad creatives and social media visuals. Hover to
+          pause.</p>
+      </div>
+
+      <div class="cr-wrap">
+        <div class="cr-track">
+          
+            <div class="cr-card tilt magic-hover" onmouseenter="enter()" onmouseleave="leave()">
+              <img src="assets/upload_1773318705.png" alt="DingDing Branding">
+              <div class="cr-info"><div class="cr-t">DingDing Branding</div><div class="cr-sub">Primary Logo Mark</div></div>
+            </div>
+            
+            <div class="cr-card tilt magic-hover" onmouseenter="enter()" onmouseleave="leave()">
+              <img src="assets/dingding-ad-1.png" alt="Veg Biryani Ad">
+              <div class="cr-info"><div class="cr-t">Veg Biryani Ad</div><div class="cr-sub">Performance Creative</div></div>
+            </div>
+            
+            <div class="cr-card tilt magic-hover" onmouseenter="enter()" onmouseleave="leave()">
+              <img src="assets/dingding-ad-2.png" alt="">
+              <div class="cr-info"><div class="cr-t"></div><div class="cr-sub"></div></div>
+            </div>
+            
+            <div class="cr-card tilt magic-hover" onmouseenter="enter()" onmouseleave="leave()">
+              <img src="assets/dingding-ad-3.jpg" alt="Ads Post">
+              <div class="cr-info"><div class="cr-t">Ads Post</div><div class="cr-sub">Menu Creative Layout</div></div>
+            </div>
+            
+            <div class="cr-card tilt magic-hover" onmouseenter="enter()" onmouseleave="leave()">
+              <img src="assets/dingding-ad-4.png" alt="DingDing Flex Board">
+              <div class="cr-info"><div class="cr-t">DingDing Flex Board</div><div class="cr-sub">B2B Tiffin Campaign</div></div>
+            </div>
+            
+            <div class="cr-card tilt magic-hover" onmouseenter="enter()" onmouseleave="leave()">
+              <img src="assets/dd-aai-fit.jpg" alt="AAI Fit Collaboration post">
+              <div class="cr-info"><div class="cr-t">AAI Fit Collaboration post</div><div class="cr-sub">Partnership Announcement</div></div>
+            </div>
+            
+            <div class="cr-card tilt magic-hover" onmouseenter="enter()" onmouseleave="leave()">
+              <img src="assets/dd-restro-logo.png" alt="DD Restro logo">
+              <div class="cr-info"><div class="cr-t">DD Restro logo</div><div class="cr-sub">Sub-Brand Identity</div></div>
+            </div>
+            
+            <div class="cr-card tilt magic-hover" onmouseenter="enter()" onmouseleave="leave()">
+              <img src="assets/dd-menu.png" alt="DingDing Menu Template">
+              <div class="cr-info"><div class="cr-t">DingDing Menu Template</div><div class="cr-sub">WhatsApp Collateral</div></div>
+            </div>
+            
+            <div class="cr-card tilt magic-hover" onmouseenter="enter()" onmouseleave="leave()">
+              <img src="assets/dd-chef-ad.jpg" alt="Post & Ads Creative">
+              <div class="cr-info"><div class="cr-t">Post & Ads Creative</div><div class="cr-sub">Rendered Ad Graphic</div></div>
+            </div>
+            
+            <div class="cr-card tilt magic-hover" onmouseenter="enter()" onmouseleave="leave()">
+              <img src="assets/upload_1773318705.png" alt="DingDing Branding">
+              <div class="cr-info"><div class="cr-t">DingDing Branding</div><div class="cr-sub">Primary Logo Mark</div></div>
+            </div>
+            
+            <div class="cr-card tilt magic-hover" onmouseenter="enter()" onmouseleave="leave()">
+              <img src="assets/dingding-ad-1.png" alt="Veg Biryani Ad">
+              <div class="cr-info"><div class="cr-t">Veg Biryani Ad</div><div class="cr-sub">Performance Creative</div></div>
+            </div>
+            
+            <div class="cr-card tilt magic-hover" onmouseenter="enter()" onmouseleave="leave()">
+              <img src="assets/dingding-ad-2.png" alt="">
+              <div class="cr-info"><div class="cr-t"></div><div class="cr-sub"></div></div>
+            </div>
+            
+            <div class="cr-card tilt magic-hover" onmouseenter="enter()" onmouseleave="leave()">
+              <img src="assets/dingding-ad-3.jpg" alt="Ads Post">
+              <div class="cr-info"><div class="cr-t">Ads Post</div><div class="cr-sub">Menu Creative Layout</div></div>
+            </div>
+            
+            <div class="cr-card tilt magic-hover" onmouseenter="enter()" onmouseleave="leave()">
+              <img src="assets/dingding-ad-4.png" alt="DingDing Flex Board">
+              <div class="cr-info"><div class="cr-t">DingDing Flex Board</div><div class="cr-sub">B2B Tiffin Campaign</div></div>
+            </div>
+            
+            <div class="cr-card tilt magic-hover" onmouseenter="enter()" onmouseleave="leave()">
+              <img src="assets/dd-aai-fit.jpg" alt="AAI Fit Collaboration post">
+              <div class="cr-info"><div class="cr-t">AAI Fit Collaboration post</div><div class="cr-sub">Partnership Announcement</div></div>
+            </div>
+            
+            <div class="cr-card tilt magic-hover" onmouseenter="enter()" onmouseleave="leave()">
+              <img src="assets/dd-restro-logo.png" alt="DD Restro logo">
+              <div class="cr-info"><div class="cr-t">DD Restro logo</div><div class="cr-sub">Sub-Brand Identity</div></div>
+            </div>
+            
+            <div class="cr-card tilt magic-hover" onmouseenter="enter()" onmouseleave="leave()">
+              <img src="assets/dd-menu.png" alt="DingDing Menu Template">
+              <div class="cr-info"><div class="cr-t">DingDing Menu Template</div><div class="cr-sub">WhatsApp Collateral</div></div>
+            </div>
+            
+            <div class="cr-card tilt magic-hover" onmouseenter="enter()" onmouseleave="leave()">
+              <img src="assets/dd-chef-ad.jpg" alt="Post & Ads Creative">
+              <div class="cr-info"><div class="cr-t">Post & Ads Creative</div><div class="cr-sub">Rendered Ad Graphic</div></div>
+            </div>
+            
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ CONTACT ═══ -->
+    <section id="contact" class="sec sec-alt">
+      <div data-rev="up" class="vis" style="transition-delay: 0s;">
+        <div class="eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg> Contact</div>
+        <h2 style="transition: outline 0.2s;">Let's Work <span class="g"
+            style="transition: outline 0.2s;">Together</span></h2>
+        <div class="dline"></div>
+        <p class="sdesc" style="transition: outline 0.2s;">Open to freelance, full-time opportunities and exciting
+          collaborations.</p>
+      </div>
+      <div class="cgrid">
+        <div data-rev="left" class="vis" style="transition-delay: 0s;">
+          <div class="ci-list">
+            <div class="ci" onmouseenter="enter()" onmouseleave="leave()">
+              <div class="ci-ic" style="font-size: 1.4rem;">📍</div>
+              <div>
+                <div class="ci-l" style="transition: outline 0.2s;">Location</div>
+                <div class="ci-v" style="transition: outline 0.2s;">Gurugram, Haryana, India</div>
+              </div>
+            </div>
+            <a href="https://linkedin.com/in/adityachauhanpro" target="_blank" class="ci" onmouseenter="enter()"
+              onmouseleave="leave()" style="display:flex;">
+              <div class="ci-ic" style="font-size: 1.4rem;">💼</div>
+              <div>
+                <div class="ci-l" style="transition: outline 0.2s;">LinkedIn</div>
+                <div class="ci-v" style="transition: outline 0.2s;">adityachauhanpro</div>
+              </div>
+            </a>
+            <div class="ci" onmouseenter="enter()" onmouseleave="leave()">
+              <div class="ci-ic" style="font-size: 1.4rem;">📸</div>
+              <div>
+                <div class="ci-l" style="transition: outline 0.2s;">Instagram</div>
+                <div class="ci-v" style="transition: outline 0.2s;">@dream.hope.ak</div>
+              </div>
+            </div>
+            <div class="ci" onmouseenter="enter()" onmouseleave="leave()">
+              <div class="ci-ic" style="font-size: 1.4rem;">🚀</div>
+              <div>
+                <div class="ci-l" style="transition: outline 0.2s;">Current</div>
+                <div class="ci-v" style="transition: outline 0.2s;">Mktg. Executive · DingDing</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cform vis" data-rev="right" onmouseenter="enter()" onmouseleave="leave()"
+          style="transition-delay: 0s;">
+          <div class="cfc tr"></div>
+          <div class="cfc bl"></div>
+          <div class="cfh">Send a Message</div>
+          <div class="cfrow">
+            <div class="fg"><label>Name</label><input type="text" placeholder="Your name"></div>
+            <div class="fg"><label>Email</label><input type="email" placeholder="your@email.com"></div>
+          </div>
+          <div class="fg"><label>Subject</label><input type="text" placeholder="Freelance · Collab · Full-time"></div>
+          <div class="fg"><label>Message</label><textarea placeholder="Tell me about your project..."></textarea></div>
+          <button class="bsend">Send Message ✦</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="fl">© 2025 Aditya Chauhan · Digital Marketing Executive</div>
+    <div class="fr">
+      <a href="https://linkedin.com/in/adityachauhanpro" target="_blank" onmouseenter="enter()"
+        onmouseleave="leave()">LinkedIn</a>
+      <a href="#work" onmouseenter="enter()" onmouseleave="leave()">Work</a>
+      <a href="#contact" onmouseenter="enter()" onmouseleave="leave()">Contact</a>
+    </div>
+  </footer>
+
+  <script>
+    /* ── ULTRA-SMOOTH CURSOR ── */
+    const dot = document.getElementById('c-dot'), ring = document.getElementById('c-ring');
+    let mx = window.innerWidth / 2, my = window.innerHeight / 2, rx = mx, ry = my;
+    document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; }, { passive: true });
+    function ticker() {
+      dot.style.left = mx + 'px'; dot.style.top = my + 'px';
+      rx += (mx - rx) * .1; ry += (my - ry) * .1;
+      ring.style.left = Math.round(rx * 10) / 10 + 'px';
+      ring.style.top = Math.round(ry * 10) / 10 + 'px';
+      requestAnimationFrame(ticker);
+    }
+    ticker();
+
+    function enter() { document.body.classList.add('ch'); }
+    function leave() { document.body.classList.remove('ch'); }
+
+    /* ── NAV SCROLL ── */
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('sc', scrollY > 15), { passive: true });
+
+    /* ── THEME TOGGLE ── */
+    const tgl = document.getElementById('tgl'), tk = document.getElementById('tglk');
+    tgl.addEventListener('click', () => {
+      const d = document.documentElement, l = d.dataset.theme === 'dark';
+      d.dataset.theme = l ? 'light' : 'dark'; tk.textContent = l ? '☀️' : '🌙';
+    });
+
+    /* ── REVEAL ── */
+    const ro = new IntersectionObserver(es => {
+      es.forEach(e => {
+        if (!e.isIntersecting) return;
+        const dl = e.target.style.getPropertyValue('--d') || '0s';
+        e.target.style.transitionDelay = dl;
+        e.target.classList.add('vis');
+        ro.unobserve(e.target);
+      });
+    }, { threshold: .1, rootMargin: '0px 0px -30px 0px' });
+    document.querySelectorAll('[data-rev]').forEach(el => ro.observe(el));
+
+    /* ── SKILL BARS ── */
+    new IntersectionObserver(es => {
+      if (!es[0].isIntersecting) return;
+      document.querySelectorAll('.sk-bar').forEach((b, i) =>
+        setTimeout(() => b.style.width = b.dataset.p + '%', i * 60 + 150)
+      );
+    }, { threshold: .2 }).observe(document.querySelector('.sgrid'));
+
+    /* ── CARD TILT + CLICK FLIP ── */
+    const scene = document.getElementById('card-scene'), card = document.getElementById('card-body');
+    let flipped = false;
+    if (scene && card) {
+      scene.addEventListener('mousemove', e => {
+        if (flipped) return;
+        const r = scene.getBoundingClientRect();
+        const x = ((e.clientY - r.top) / r.height - .5) * 12;
+        const y = -((e.clientX - r.left) / r.width - .5) * 12;
+        card.style.transform = `rotateX(${x}deg) rotateY(${y}deg)`;
+      }, { passive: true });
+      scene.addEventListener('mouseleave', () => { if (!flipped) card.style.transform = 'none'; });
+      scene.addEventListener('click', () => {
+        flipped = !flipped;
+        card.style.transform = flipped ? 'rotateY(180deg)' : 'none';
+      });
+    }
+
+    /* ── GLOBAL 3D HOVER TILT & MAGIC SPOTLIGHT ── */
+    document.querySelectorAll('.magic-hover, .tilt').forEach(el => {
+      el.addEventListener('mousemove', e => {
+        const rect = el.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        // Magic Spotlight Logic
+        el.style.setProperty('--mx', `${x}px`);
+        el.style.setProperty('--my', `${y}px`);
+
+        // 3D Tilt Logic
+        if (el.classList.contains('tilt')) {
+          el.classList.remove('tilt-leave');
+          const multiplier = 15;
+          const xRotate = multiplier * ((y - rect.height / 2) / rect.height);
+          const yRotate = -multiplier * ((x - rect.width / 2) / rect.width);
+          el.style.transform = `perspective(1000px) rotateX(${xRotate}deg) rotateY(${yRotate}deg) scale3d(1.02, 1.02, 1.02)`;
+        }
+      });
+
+      el.addEventListener('mouseleave', () => {
+        if (el.classList.contains('tilt')) {
+          el.classList.add('tilt-leave');
+          el.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+        }
+      });
+    });
+
+    /* ── PROFILE IMAGE FALLBACK ── */
+    const img = document.getElementById('p-img');
+    if (img) {
+      img.onerror = function () {
+        const w = this.parentElement;
+        w.innerHTML = '<div class="photo-fallback">AC</div>';
+      };
+      img.crossOrigin = 'anonymous';
+    }
+
+    /* ── LOCAL CMS FETCH LOGIC ── */
+    fetch('/api/content')
+      .then(res => {
+        if (!res.ok) throw new Error('CMS API not found');
+        return res.json();
+      })
+      .then(data => {
+        // Inject Theme
+        document.documentElement.style.setProperty('--v', data.theme.primaryHue);
+        document.documentElement.style.setProperty('--c', data.theme.accentHue);
+
+        // Inject Hero
+        if (document.querySelector('.hero h1')) document.querySelector('.hero h1').innerHTML = data.hero.title;
+        if (document.querySelector('.hero p')) document.querySelector('.hero p').innerHTML = data.hero.subtitle;
+
+        // Skill tags
+        const shtContainer = document.querySelector('.sht-wrap');
+        if (shtContainer && data.hero.skills) {
+          shtContainer.innerHTML = '';
+          data.hero.skills.forEach(s => {
+            shtContainer.innerHTML += `<div class="sht">${s}</div>`;
+          });
+        }
+
+        // About Skills
+        const skillsContainer = document.querySelector('.sgrid');
+        if (skillsContainer && data.about.skills) {
+          skillsContainer.innerHTML = '';
+          data.about.skills.forEach((sk, i) => {
+            const delays = ['.15s', '.24s', '.32s', '.4s'];
+            skillsContainer.innerHTML += `
+          <div class="sk" data-rev="up" style="--d:${delays[i] || '0s'}" onmouseenter="enter()" onmouseleave="leave()">
+            <div class="sk-n">${sk.name}</div>
+            <div class="sk-d">${sk.desc}</div>
+            <div class="sk-bar-wrap"><div class="sk-pct">${sk.progress}%</div><div class="sk-bg"><div class="sk-bar" data-p="${sk.progress}" style="width: ${sk.progress}%;"></div></div></div>
+          </div>
+        `;
+          });
+        }
+
+        // Projects
+        const pgrid = document.querySelector('.pgrid');
+        if (pgrid && data.projects) {
+          pgrid.innerHTML = '';
+          data.projects.forEach((p, i) => {
+            pgrid.innerHTML += `
+          <a href="#" class="pcard tilt" data-rev="up" style="--d:.${i + 1}s; grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 0; align-items: stretch; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.4); overflow: hidden; position: relative;" onmouseenter="enter()" onmouseleave="leave()">
+            <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at center, rgba(255, 255, 255, 0.05), transparent 60%); z-index: 0; pointer-events: none; animation: spin 20s linear infinite;"></div>
+            <div class="pthumb" style="background:linear-gradient(to right, #111, #222); border-radius: 0; border: none; padding: 2rem; display:flex; justify-content:center; align-items:center; overflow:hidden; position:relative; z-index: 1;">
+              <img src="${p.image}" alt="${p.company}" style="width: 80%; height: auto; max-height: 100%; object-fit: contain; transform: scale(1.05) translateZ(30px); filter: drop-shadow(0 20px 30px rgba(0,0,0,0.15)); transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);" class="hover-scale-img">
+            </div>
+            <div class="pb" style="background: rgba(10,10,15,0.6); border-radius: 0; border: none; border-left: 1px solid rgba(255, 255, 255, 0.05); padding: 3rem; display: flex; flex-direction: column; justify-content: center; z-index: 1; transform: translateZ(20px);">
+              <span class="ptag" style="align-self: flex-start; margin-bottom: 1rem; font-size: 0.75rem; padding: 0.5rem 1rem;">${p.tags.join(' · ')}</span>
+              <div class="pt" style="font-size: 2.5rem; margin-bottom: 1rem;">${p.company}</div>
+              <div class="pd" style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 2rem;"><b>${p.role}</b><br><br>${p.description}</div>
+              <span class="pa" style="font-size: 1rem;">View Details →</span>
+            </div>
+          </a>
+        `;
+          });
+        }
+
+        // Creatives
+        const ctrack = document.querySelector('.cr-track');
+        if (ctrack && data.creatives) {
+          let cHTML = '';
+          data.creatives.forEach(c => {
+            cHTML += `
+          <div class="cr-card tilt magic-hover" onmouseenter="enter()" onmouseleave="leave()">
+            <img src="${c.image}" alt="${c.title}">
+            <div class="cr-info"><div class="cr-t">${c.title}</div><div class="cr-sub">${c.subtitle}</div></div>
+          </div>
+        `;
+          });
+          ctrack.innerHTML = cHTML + cHTML; // duplicate for infinite scroll
+        }
+      })
+      .catch(err => {
+        console.log("Running in static HTML mode (No CMS Backend).");
+      });
+  </script>
+
+
+  <input type="file" accept="image/*" style="display: none;">
+  <div id="visual-editor-panel"
+    style="position: fixed; top: 20px; right: 20px; width: 320px; background: rgba(10, 10, 20, 0.95); border: 1px solid rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); padding: 20px; border-radius: 16px; z-index: 999999; box-shadow: rgba(0, 0, 0, 0.5) 0px 20px 50px; font-family: Outfit, sans-serif; color: rgb(255, 255, 255); display: none;">
+    <div
+      style="font-weight: 800; font-size: 1.2rem; margin-bottom: 1rem; color: #8664ff; display:flex; align-items:center; gap:8px;">
+      <span
+        style="display:inline-block; width:10px; height:10px; background:#00ff00; border-radius:50%; box-shadow: 0 0 10px #00ff00;"></span>
+      Live Website Editor
+    </div>
+
+    <div style="font-size: 0.8rem; color: #a1a1b5; margin-bottom: 1rem; line-height:1.4;">
+      Click any <b>text</b> to edit directly. Click any <b>image</b> to replace it. Changes will be saved permanently.
+    </div>
+
+    <hr style="border-color: rgba(255,255,255,0.1); margin-bottom: 1rem;">
+
+    <div style="display:flex; justify-content:space-between; margin-bottom: 15px;">
+      <div>
+        <label
+          style="font-size: 0.7rem; font-family: monospace; color:#22d3ee; display:block; margin-bottom:5px;">Primary
+          Color</label>
+        <input type="color" id="ve-primary" value="#8664ff"
+          style="cursor:pointer; background:none; border:none; width:50px; height:30px; padding:0;">
+      </div>
+      <div>
+        <label
+          style="font-size: 0.7rem; font-family: monospace; color:#22d3ee; display:block; margin-bottom:5px;">Accent
+          Color</label>
+        <input type="color" id="ve-accent" value="#22d3ee"
+          style="cursor:pointer; background:none; border:none; width:50px; height:30px; padding:0;">
+      </div>
+    </div>
+
+    <div style="margin-bottom: 15px;">
+      <label style="font-size: 0.7rem; font-family: monospace; color:#22d3ee; display:block; margin-bottom:5px;">Section
+        Vertical Spacing</label>
+      <input type="range" id="ve-padding" min="4" max="15" value="7" style="width:100%; accent-color: #8664ff;">
+    </div>
+
+    <button id="ve-save"
+      style="width: 100%; padding: 12px; background: linear-gradient(135deg, #8664ff, #22d3ee); border: none; border-radius: 8px; font-weight: bold; font-family: inherit; color: #fff; cursor: pointer; transition: 0.2s; margin-top: 10px; font-size:1rem;">Publishing...</button>
+  </div>
+</body>
+
+</html>

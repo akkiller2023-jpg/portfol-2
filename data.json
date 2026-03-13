@@ -1,0 +1,123 @@
+{
+  "theme": {
+    "primary": "#e11d48",
+    "accent": "#22d3ee"
+  },
+  "hero": {
+    "title": "Aditya Chauhan",
+    "subtitle": "I help businesses grow online \u2014 through SEO, paid media, and AI-driven marketing strategies that produce measurable results.",
+    "skills": [
+      "SEO",
+      "Meta Ads",
+      "AI Strategy",
+      "Growth"
+    ],
+    "image": "assets/upload_1773316741.png"
+  },
+  "about": {
+    "text": "I specialize in data-driven marketing, combining deep SEO knowledge with high-converting Meta Ads and modern AI workflows. My approach isn't just about traffic\u2014it's about building scalable engines that generate compounding revenue.",
+    "skills": [
+      {
+        "name": "Search Engine Optimisation",
+        "desc": "Keyword research, on-page SEO, link building, technical audits and ranking strategy.",
+        "progress": 88
+      },
+      {
+        "name": "Meta Ads & Paid Social",
+        "desc": "Campaign setup, audience targeting, A/B testing, budget optimisation and ROAS tracking.",
+        "progress": 84
+      },
+      {
+        "name": "Content & Copywriting",
+        "desc": "Ad copy, social captions, long-form articles, video scripts and brand messaging.",
+        "progress": 86
+      },
+      {
+        "name": "AI Tools & Prompt Engineering",
+        "desc": "Advanced prompting across ChatGPT, Claude, Midjourney and 10+ AI platforms daily.",
+        "progress": 92
+      },
+      {
+        "name": "Social Media Marketing",
+        "desc": "Platform strategy, organic growth, content calendars, community management and analytics.",
+        "progress": 85
+      },
+      {
+        "name": "Marketing Automation",
+        "desc": "Python & Google Apps Script workflows, automated reporting, CRM integrations.",
+        "progress": 80
+      }
+    ]
+  },
+  "projects": [
+    {
+      "company": "DingDing",
+      "role": "Digital Marketer",
+      "description": "As a Digital Marketing Executive for this fast-growing cloud kitchen & tiffin service, I manage end-to-end Meta Ads, creative strategy, and menu promotions to drive daily subscriptions across Gurugram.",
+      "tags": [
+        "SEO",
+        "Social Media",
+        "Brand Identity"
+      ],
+      "image": "assets/upload_1773318570.jpg"
+    },
+    {
+      "company": "Baseplate",
+      "role": "SEO Specialist",
+      "description": "Led complete SEO overhaul for the interior design firm, dramatically improving local search rankings and organic lead generation for premium residential projects.",
+      "tags": [
+        "Local SEO",
+        "Content",
+        "Analytics"
+      ],
+      "image": "assets/upload_1773318634.png"
+    }
+  ],
+  "creatives": [
+    {
+      "image": "assets/upload_1773318705.png",
+      "title": "DingDing Branding",
+      "subtitle": "Primary Logo Mark"
+    },
+    {
+      "image": "assets/dingding-ad-1.png",
+      "title": "Veg Biryani Ad",
+      "subtitle": "Performance Creative"
+    },
+    {
+      "image": "assets/dingding-ad-2.png",
+      "title": "",
+      "subtitle": ""
+    },
+    {
+      "image": "assets/dingding-ad-3.jpg",
+      "title": "Ads Post",
+      "subtitle": "Menu Creative Layout"
+    },
+    {
+      "image": "assets/dingding-ad-4.png",
+      "title": "DingDing Flex Board",
+      "subtitle": "B2B Tiffin Campaign"
+    },
+    {
+      "image": "assets/dd-aai-fit.jpg",
+      "title": "AAI Fit Collaboration post",
+      "subtitle": "Partnership Announcement"
+    },
+    {
+      "image": "assets/dd-restro-logo.png",
+      "title": "DD Restro logo",
+      "subtitle": "Sub-Brand Identity"
+    },
+    {
+      "image": "assets/dd-menu.png",
+      "title": "DingDing Menu Template",
+      "subtitle": "WhatsApp Collateral"
+    },
+    {
+      "image": "assets/dd-chef-ad.jpg",
+      "title": "Post & Ads Creative",
+      "subtitle": "Rendered Ad Graphic"
+    }
+  ]
+}
